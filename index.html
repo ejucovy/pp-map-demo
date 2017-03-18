@@ -1,0 +1,475 @@
+
+<!doctype html>
+<head>
+	<title>People Power Action Event Map</title>
+<meta charset="utf-8" />
+<meta name="application-name" content="People Power"/>
+<link rel="shortcut icon" type="image/x-icon" href="https://peoplepower.org/assets/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="description" content="We're organizing grassroots volunteers to fight against the worst abuses of the Trump administration.">
+<meta property="og:image" content="http://s3.peoplepower.org/images/peoplepower-attendsocial.png" />
+<meta property="og:url" content="https://map.peoplepower.org/" />
+<meta property="og:title" content="Map: Join an ACLU People Power Action Event"/>
+<meta property="og:description" content="We're organizing grassroots volunteers to fight against the worst abuses of the Trump administration."/>
+<link href="https://s3.amazonaws.com/map.peoplepower.org/css/mapbox.css" rel="stylesheet" />
+<meta property="og:site_name" content="PeoplePower.org">
+		<meta name="twitter:card" value="summary_large_image">
+    <meta name="twitter:site" content="@ACLU">
+    <meta name="twitter:creator" content="@ACLU">
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/map.peoplepower.org/css/events-map.css">
+
+<style type="text/css">
+@font-face {
+    font-family: PeoplePower;
+    src: url("https://s3.amazonaws.com/s3.peoplepower.org/fonts/FreightSansCmpPro-Bold.otf") format("opentype");;
+    font-weight: bold;
+}
+@font-face {
+    font-family: PeoplePower;
+    src: url("https://s3.amazonaws.com/s3.peoplepower.org/fonts/FreightSansCmpPro-Med.otf") format("opentype");;
+    font-weight: 400;
+}
+body {     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: 300; }
+html section#header, 
+body section#header { height:100px; }
+html section#activity-area, body section#activity-area { height: calc(100% - 100px); }
+.header-logo-desktop { box-sizing:border-box;padding:13px;height:100px;float:left; }
+.header-logo-desktop img { width: 100%;max-width:275px; height: auto; }
+	.header-text {float:left; font-family: PeoplePower, Arial, sans-serif; font-size:30px;color:#272f32;line-height: 30px;position:relative;top:20px;}
+	.header-text span { font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-size:15px;color:#9DBDC6;line-height: 13px;}
+	
+	@media (max-width: 1042px){
+		.header-text { float:none;}
+		.header-logo-desktop {float:none;}
+	}
+	
+.header-share { position: absolute; top: 40px; right: 10px;font-size:19px; }
+.header-share li { float:left; margin-right: 10px; text-align: center; }
+	.header-share li:nth-of-type(2){margin-right:0;}
+.header-share a { font-family: PeoplePower, sans-serif; font-weight: 400; background: #aaa;font-size:19px; line-height: 25px; padding: 10px 20px 8px 20px; text-transform: uppercase; color: #fff;  letter-spacing: .4px; }
+.header-share .fb a { background: #3B5998; }
+	@media (max-width: 645px){
+	.header-share .fb { display:none; }
+
+}
+	#timeanddate {
+  background-color:#9dbdc6;height:30px;line-height:30px;color:#FFF;font-weight:bold;text-align:center;
+}
+.header-share .fb a span { font-size:16px;position: relative;top:1px; }
+.header-share .pp-hostlink a { background: #ef4134 }
+#mobile-title img { width: 95%;max-width:300px;margin:0 auto; height: auto; }
+html article#events div#filters, body article#events div#filters { border: 0; }
+	@media only screen and (min-width: 700px) { 
+		html article#events div#filters, body article#events div#filters { border: 5px solid #9ec0c5; box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3)} 
+	}
+html article#events div#filters form input[type='text'], 
+html article#events div#filters form input[type='number'], 
+body article#events div#filters form input[type='text'], 
+body article#events div#filters form input[type='number'] { border: 1px solid #9ec0c5; line-height: 30px; height: 30px; font-size: 22px; }
+body article#events div#filters form input[type='number']::-webkit-input-placeholder { color: #000; }
+body article#events div#filters form input[type='number']:focus::-webkit-input-placeholder { color: #ccc; }
+html article#events div#filters form select, 
+body article#events div#filters form select { border: 1px solid #9ec0c5; line-height: 34px; height: 42px; color: #9ec0c5; font-size: 22px; width: 80px;  }
+@media only screen and (max-width: 700px) {
+	html article#events div#filters, body article#events div#filters { background-color: #fff; }
+	body section#activity-area > article#events #filters { padding-bottom: 10px; }
+	body section#activity-area > article#events #filters h3#switch-link { position: relative; right: auto; margin-top: 10px; }
+	body section#activity-area > article#events #filters h3#switch-link a { color: #aaa; border: 1px solid #aaa; font-family: PeoplePower, sans-serif; font-size: 16px; letter-spacing: .5px; font-weight: 400; padding: 4px 10px 2px; background: #eee; }
+	html article#events div#filters form input[type='text'], 
+	html article#events div#filters form input[type='number'], 
+	body article#events div#filters form input[type='text'], 
+	body article#events div#filters form input[type='number'] { width: 160px; }
+	body article#events div#filters form input[type='number']::-webkit-input-placeholder { font-size: 18px; }
+	html article#events div#filters form select, 
+}
+html article#events div#filters h5, body article#events div#filters h5 { font-size: 11px; letter-spacing: 1px; color: #9ec0c5; }
+html article#events div#filters h4, body article#events div#filters h4 { margin-bottom: 0; color: #537983; letter-spacing: 1px; } 
+#timeanddate { font-size: 20px; height: 50px; line-height: 50px; background: #537983; letter-spacing: 1px; }
+html div.event-item .rsvp-link, body div.event-item .rsvp-link { padding: 12px 15px 8px; font-size: 28px; letter-spacing: 1px; border: 1px solid #fff; }
+.pp-hostlink .icon-hostlink { padding: 2px 3px 0 0;position:relative;top:2px; }
+html footer, body footer { padding: 20px 0 60px 0; }
+	html article#events div#filters form input[type='text'], html article#events div#filters form input[type='number'], body article#events div#filters form input[type='text'], body article#events div#filters form input[type='number'] {
+width:168px;
+}
+select[name="distance"]{ margin-right:15px;}
+body article#events div#filters form select[name="sort"]{ font-size:15px;}
+	</style>
+</head>
+      <!--[if lte IE 9]>
+       <meta http-equiv="refresh" content="0; url=https://go.berniesanders.com/page/event/search_simple" />
+     <![endif]-->
+<body class='list-view initial-view'>
+
+
+<section id='header'>
+<div id="header" class=montserrat>
+<div class="main-title-area">
+<div style="margin-bottom: 4px;">
+<div id='spiel'>
+<strong>People Power</strong><br>
+</div>
+</div>
+</div>
+<div class="header-logo-desktop"><img src="https://s3.amazonaws.com/s3.peoplepower.org/images/peoplepowerlockup.svg" alt="People Power | ACLU"  /></div>
+<div class="header-share">
+	<ul>
+		<li class="pp-hostlink"><a target="_blank" href="https://go.peoplepower.org/signup/host_new?source=map"><span class="icon-hostlink"><img src="https://map.peoplepower.org/img/icon-hostlink1.svg" /></span> Host an event</a></li>
+		<li class="fb"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmap.peoplepower.org%2F/"><span class="icon-facebook"></span> Share on Facebook</a></li>
+</div><!-- .header-share -->
+</div> <!-- #header -->
+</section> <!-- section#header -->
+
+
+
+<section id='activity-area' class='clearfix'>
+  <article id='events'>
+    <div id='filters'>
+      <div id='loading-icon' class=montserrat>Loading...</div>
+      <h4 class='lato title'>
+        <span id='screen-title'>Find Event</span>
+        <span id='mobile-title'><img src="https://s3.amazonaws.com/s3.peoplepower.org/images/peoplepowerlockup.svg" alt="People Power | ACLU"  /></span>
+      </h4>
+      <form id='filter-form'>
+        <table>
+          <tr>
+            <td>
+              <h5 class=montserrat>By Zipcode</h5>
+              <input type='number' name='zipcode' maxlength='5' placeholder='Enter your zipcode' onclick="this.select();" >
+            </td>
+            <td>
+              <h5 class=montserrat>Distance</h5>
+              <select name='distance'>
+                <option value='5'>5mi</option>
+                <option value='20'>20mi</option>
+                <option value='50' selected='selected'>50mi</option>
+                <option value='100'>100mi</option>
+              </select>
+            </td>
+            <td>
+              <h5 class=montserrat>Sort By</h5>
+              <select name='sort'>
+                <option value='time'>Time</option>
+                <option value='distance' selected='selected'>Distance</option>
+              </select>
+              <input type='button' style='position: absolute; z-index: -1; opacity: 0;' id='hidden-button'/>
+            </td>
+          </tr>
+<tr>
+<td colspan="2">
+<h3 id='switch-link'>
+<a href='javascript: void(null)' onclick='window.mapManager.toMapView()' id='to-map-view'>Show Map</a>
+<a href='javascript: void(null)' onclick='window.mapManager.toListView()' id='to-list-view'>Show List</a>
+</h3>
+</td>
+</tr>
+        </table>
+        
+ 
+        <div id='filter-popup-area' class='montserrat' style='display: none'>
+          <a href='javascript: void(null)' class='filter-button show-filter' onclick='$("#events").addClass("show-type-filter");'>
+            Search by Type
+          </a>
+          <div id='filter-list-area'>
+            <h5>Search by Type</h5>
+            <div id='f-container'>
+              <div id='filter-list-container'>
+                <ul id='filter-list'></ul>
+              </div>
+              <div style='text-align: center; font-size: 11px; margin-top: 10px; color: lightgray;'>
+              <a href='javascript: void(null)' id='show-all'
+                 onclick='$("#filter-list").find("input[type=checkbox]").prop("checked", true).trigger("change");'>Show All</a> &bull;
+              <a href='javascript: void(null)'
+                 onclick='$("#filter-list").find("input[type=checkbox]").prop("checked", false).trigger("change")'>Hide All</a>
+              </div>
+            </div>
+            <p align='right'>
+              <a href='javascript: void(null)' class='filter-button'
+                 onclick='$("#events").removeClass("show-type-filter");'>
+                Hide Legend
+              </a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id='event-list-container'>
+      <ul id='event-list'>
+      </ul>
+      <footer>
+        <div id='footer-area' >
+            <span class="mobile-only">Type in a zip code to find an event.</span>
+			<h3 style="font-family:PeoplePower, Arial, sans-serif;text-align: center;margin:0 auto 20px auto;width:90%;color:#272f32;font-size:38px;">Find an event near you!</h3>
+			<sub><a href="/cdn-cgi/l/email-protection#a2cbccc4cde2d2c7cdd2cec7d2cdd5c7d08ccdd0c5">Email: <span class="__cf_email__" data-cfemail="71181f171e3101141e011d14011e0614035f1e0316">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a><br><br><a href="https://go.peoplepower.org/signup/privacy/">Privacy Policy</a></sub>
+                </div>
+
+      </footer>
+    </div>
+  </article>
+  <article id='map'>
+    <div id='map-container'></div>
+  </article>
+</section> <!-- section#activity-area -->
+<section id='campaign-offices'>
+  <div class='viewport'>
+    <h3 class='title'>Nearby Campaign Offices</h3>
+    <a class='close-button lato' href='javascript: void(null);' onclick='$("body").removeClass("show-office")'>x</a>
+    <div class='container'>
+      <ul id='campaign-office-list'></ul>
+    </div>
+  </div>
+</section>
+
+<script src="https://d2zfgjd0dxweyq.cloudfront.net/js/jquery.gz"></script>
+<script src='https://d2zfgjd0dxweyq.cloudfront.net/js/d3.gz' type='text/javascript'></script>
+<script id='zipcodes-datadump' type='text/plain'></script>
+<script src='https://d2zfgjd0dxweyq.cloudfront.net/js/deparam.min.gz'></script>
+<script src='https://d2zfgjd0dxweyq.cloudfront.net/js/mapbox.gz'></script>
+<!-- <script src='/js/leaflet-bouncer.js'></script> -->
+    <script type="text/javascript" src="//s3.amazonaws.com/peoplepower.org/assets/jstz.js"></script>
+<script src='https://d2zfgjd0dxweyq.cloudfront.net/js/moment.min.js'></script>
+  <script type="text/javascript" src="//peoplepower.org/assets/moment-timezone.js"></script>
+<script src='https://d2zfgjd0dxweyq.cloudfront.net/js/js-cookie.js'></script>
+<script src='https://s3.amazonaws.com/map.peoplepower.org/js/MapManagerTranspiled.js'></script>
+<script type='text/javascript'>
+window.eventTypeFilters = [
+  // {
+  //   name: 'Campaign Office',
+  //   id: 'campaign-office',
+  //   onItem: "<img style='width: 14px; height: 14px;' src='//d2bq2yf31lju3q.cloudfront.net/img/icon/star.png' />",
+  //   offItem: "<img style='width: 14px; height: 14px;' src='//d2bq2yf31lju3q.cloudfront.net/img/icon/star-gray.png' />"
+  // },
+  {
+    name: 'Action',
+    id: 'action'
+  }
+];
+</script>
+<script type='text/javascript'>
+(function($, d3) {
+var date = new Date();
+$.ajax({
+  url: 'https://dnb6leangx6dc.cloudfront.net/output/peoplepower.js.gz',
+  dataType: 'script',
+  cache: true, // otherwise will get fresh copy every page load
+  success:  function(data) {
+    window.EVENT_DATA = window.PEOPLEPOWER_EVENTS;
+        d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
+         function(zipcodes) {
+          //Clean data
+          window.EVENT_DATA.forEach(function(d) {
+            d.filters = [];
+            //Set filter info
+            switch(d.event_type) {
+              case "Launch": d.filters.push('launch'); break;
+              case "Action": d.filters.push('action'); break;
+              default: d.filters.push('other'); break;
+            }
+
+            d.is_official = d.is_official == "1";
+            if (d.is_official) { d.filters.push("official-event"); }
+          });
+
+          var oldDate = new Date();
+
+          /* Extract default lat lon */
+          var m = /.*\?c=(.+?),(.+?),(\d+)z#?.*/g.exec(window.location.href)
+          if (m && m[1] && m[2] && m[3]) {
+            var defaultCoord = {
+              center: [parseFloat(m[1]), parseFloat(m[2])],
+              zoom: parseInt(m[3])
+            };
+            window.mapManager = MapManager(window.EVENT_DATA, campaignOffices, zipcodes, { defaultCoord: defaultCoord });
+            var params = $.deparam
+            window.mapManager.filterByCoords(defaultCoord.center, 50, params.sort, params.f);
+          } else {
+            window.mapManager = MapManager(window.EVENT_DATA, null, zipcodes);
+          }
+
+          if($("input[name='zipcode']").val() == '' && Cookies.get('map.bernie.zipcode') && window.location.hash == '') {
+            $("input[name='zipcode']").val(Cookies.get('map.bernie.zipcode'));
+            window.location.hash = $("#filter-form").serialize();
+          } else {
+            $(window).trigger("hashchange");
+          }
+        });
+      }
+});
+
+
+ /** initial loading before activating listeners...
+  */
+
+ var params = $.deparam(window.location.hash.substring(1));
+  if (params.zipcode) {
+    $("input[name='zipcode']").val(params.zipcode);
+  }
+
+  if (params.distance) { $("select[name='distance']").val(params.distance);}
+  if (params.sort) { $("select[name='sort']").val(params.sort);}
+
+/* Prepare filters */
+$("#filter-list").append(
+  window.eventTypeFilters.map(function(d) {
+    return $("<li />")
+              .append(
+                $("<input type='checkbox' class='filter-type' />")
+                    .attr('name', 'f[]')
+                    .attr("value", d.id)
+                    .attr("id", d.id)
+                    .prop("checked", !params.f ? true : $.inArray(d.id, params.f) >= 0)
+              )
+              .append($("<label />").attr('for', d.id).append($("<span />").addClass('filter-on')
+                        .append(d.onItem ? d.onItem : $("<span>").addClass('circle-button default-on')))
+              .append($("<span />").addClass('filter-off')
+                        .append(d.offItem ? d.offItem : $("<span>").addClass('circle-button default-off')))
+                        .append($("<span>").text(d.name)));
+  })
+);
+/***
+ *  define events
+ */
+ //only numbers
+ $("input[name='zipcode']").on('keyup keydown', function(e) {
+  if (e.type == 'keydown' && (e.keyCode < 48 || e.keyCode > 57)
+      && e.keyCode != 8 && !(e.keyCode >= 37 || e.keyCode <= 40)) {
+    return false;
+  }
+
+  if (e.type == 'keyup' && $(this).val().length == 5) {
+    if (! (e.keyCode >= 37 && e.keyCode <= 40) ) {
+      $(this).closest("form#filter-form").submit();
+      $("#hidden-button").focus();
+    }
+  }
+ });
+
+ /***
+  *  onchange of select
+  */
+  $("select[name='distance'],select[name='sort']").on('change', function(e) {
+    $(this).closest("form#filter-form").submit();
+  });
+
+  /**
+  * On filter type change
+  */
+  $(".filter-type").on('change', function(e) {
+    $(this).closest("form#filter-form").submit();
+  })
+
+ //On submit
+ $("form#filter-form").on('submit', function(e) {
+  var serial = $(this).serialize();
+  window.location.hash = serial;
+  e.preventDefault();
+  return false;
+ });
+
+ $(window).on('hashchange', function(e) {
+
+  var hash = window.location.hash;
+  if (hash.length == 0 || hash.substring(1) == 0) { $("#loading-icon").hide(); return false; }
+
+  var params = $.deparam(hash.substring(1));
+
+  //Custom feature for specific default lat/lon
+  //lat=40.7415479&lon=-73.8239609&zoom=17
+
+  setTimeout(function() {
+    $("#loading-icon").show();
+
+    if ( window.mapManager._options && window.mapManager._options.defaultCoord && params.zipcode.length != 5) {
+      window.mapManager.filterByType(params.f);
+      window.mapManager.filterByCoords(window.mapManager._options.defaultCoord.center, params.distance, params.sort, params.f);
+    } else {
+      window.mapManager.filterByType(params.f);
+      window.mapManager.filter(params.zipcode, params.distance, params.sort, params.f);
+    }
+    $("#loading-icon").hide();
+
+    // var $info = window.votingInfoManager.getInfo(window.mapManager._zipcodes[params.zipcode].state);
+    // $(".registration-msg").remove();
+    // if ($info) {
+    //   $info.prependTo("#event-list-container");
+    // }
+
+  }, 10);
+  // $("#loading-icon").hide();
+  if (params.zipcode.length == 5 && $("body").hasClass("initial-view")) {
+    $("#events").removeClass("show-type-filter");
+    $("body").removeClass("initial-view");
+  }
+ });
+
+  var pre = $.deparam(window.location.hash.substring(1));
+  if ($("body").hasClass("initial-view")) {
+    if ($(window).width() >= 700 && (!pre.zipcode || pre && pre.zipcode.length != 5)) {
+      $("#events").addClass("show-type-filter");
+    }
+  }
+
+
+})(jQuery, d3);
+
+</script>
+<script>
+				// Get the timezone
+				// If it's already in storage, just grab from there
+				if (!sessionStorage.getItem('timezone')) {
+				  var tz = jstz.determine() || 'UTC';
+				  sessionStorage.setItem('timezone', tz.name());
+				}
+				var currTz = sessionStorage.getItem('timezone');
+
+				// References to DOM elements
+				var inputTime = document.querySelector("#input-time");
+				var output = document.querySelector("#local");
+
+				// When the input changes, update the local time
+				inputTime.addEventListener("change", function() {
+				  updateTime(this.value);
+				});
+
+				function updateTime(theTime) {
+
+				  // Format Moment.js expects:
+				  //   2015-08-12T14:30Z
+				  // Moment.js can help us build it.
+				  var date = moment().format("YYYY-MM-DD");
+				  var stamp = date + "T" + theTime + "Z";
+
+				  // Create a Moment.js object
+				  var momentTime = moment(stamp);
+
+				  // Adjust using Moment Timezone
+				  var tzTime = momentTime.tz(currTz);
+
+				  // Format the time back to normal
+				  var formattedTime = tzTime.format('h:mma');
+					if (currTz == 'America/New_York'){
+						var newKTz = 'ET'
+					} else {
+						if (currTz == 'America/Chicago'){
+							var newKTz = 'CT'
+						} else {
+							if (currTz == 'America/Los_Angeles'){
+								var newKTz = 'PT'
+							} else {
+								if (currTz == 'America/Denver'){
+									var newKTz = 'MT'
+								} else {
+										var newKTz = currTz
+								}
+							}
+						}
+					}
+					
+				  output.textContent = formattedTime + " " + newKTz;
+				}
+
+				updateTime(inputTime.value);
+				  //# sourceURL=pen.js
+				  </script>		
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>
