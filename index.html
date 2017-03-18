@@ -249,10 +249,11 @@ window.eventTypeFilters = [
 (function($, d3) {
 var date = new Date();
 $.ajax({
-  url: 'https://dnb6leangx6dc.cloudfront.net/output/peoplepower.js.gz',
+  url: 'https://go.peoplepower.org/event/action/search/?template_set=json_api',
   dataType: 'script',
   cache: true, // otherwise will get fresh copy every page load
   success:  function(data) {
+    window.PEOPLEPOWER_EVENTS.pop(-1);
     window.EVENT_DATA = window.PEOPLEPOWER_EVENTS;
         d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
          function(zipcodes) {
