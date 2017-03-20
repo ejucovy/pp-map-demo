@@ -252,7 +252,7 @@ var url = 'https://go.peoplepower.org/event/action/search/?template_set=json_api
 if (window.location.search.match(/v2/)) {
    url = "http://d3r5pbxngwkvri.cloudfront.net/action_events.js.gz";
 }
-if (window.location.search.match(/v3/) {
+if (window.location.search.match(/v3/)) {
    url = "https://s3.amazonaws.com/thirdbear-backups/aclu/public/action_events.js";
 }
 $.ajax({
@@ -260,7 +260,10 @@ $.ajax({
   dataType: 'script',
   cache: true, // otherwise will get fresh copy every page load
   success:  function(data) {
-    window.PEOPLEPOWER_EVENTS.pop(-1);
+    if (url === "https://go.peoplepower.org/event/action/search/?template_set=json_api" ) {
+        window.PEOPLEPOWER_EVENTS.pop(-1);
+    }
+      
     window.EVENT_DATA = window.PEOPLEPOWER_EVENTS;
         d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
          function(zipcodes) {
