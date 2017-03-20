@@ -248,8 +248,12 @@ window.eventTypeFilters = [
 <script type='text/javascript'>
 (function($, d3) {
 var date = new Date();
+var url = 'https://go.peoplepower.org/event/action/search/?template_set=json_api';
+if (window.location.search.match(/v2/)) {
+   url = "action_events.js.gz";
+}
 $.ajax({
-  url: 'https://go.peoplepower.org/event/action/search/?template_set=json_api',
+  url: url,
   dataType: 'script',
   cache: true, // otherwise will get fresh copy every page load
   success:  function(data) {
